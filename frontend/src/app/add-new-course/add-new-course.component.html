@@ -1,0 +1,49 @@
+<div class="container"  style="padding-top: 50px;padding-left:250px">
+    <div class="col-md-9">
+		<div class="card">
+		    <div class="card-body">
+		        <div class="row">
+		            <div class="col-md-12">
+		                <h4>Add New Course</h4>
+		                <hr>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="col-md-12">
+                        <form class="form-signin" #addCourseForm='ngForm' (ngSubmit)="OnSubmit()" >
+
+                            
+
+                            <div class="form-group ">
+                            <input type="text"  name="Name" placeholder="Enter Course Name" class="form-control" required [(ngModel)]="newCourseData.Name" >
+                            </div>
+                            
+                            <div class="form-group ">
+                            <input type="date"  name="StartDate" placeholder="Enter Start Date" class="form-control" required [(ngModel)]="newCourseData.StartDate" >
+                            </div>
+    
+                            <div class="form-group ">
+                            <input type="number"  name="Duration" placeholder="Enter Couse Duration" class="form-control "  required [(ngModel)]="newCourseData.Duration">
+                            </div>
+
+
+                            
+                            <div class="form-group offset-0 col-3 ">
+                                <button class="btn btn-primary btn-block" type="submit">Save</button>
+                            </div>
+                        </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+    </div>
+</div>
+<footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="#">devWithRahul</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>

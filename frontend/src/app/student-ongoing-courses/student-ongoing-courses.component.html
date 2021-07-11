@@ -1,0 +1,63 @@
+
+
+
+<div class="container" style="padding-top: 20px">
+    <h2>My Ongoing Courses</h2>
+    
+    <table class="table  table-hover"  >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>Duration</th>
+          <th>Fees</th>
+          <th>Mentor Name</th>
+          <th>Mentor Contact</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let enrolledCourse of enrolledCourses" id="myList">
+          <td>{{enrolledCourse.enrolledCourseId}}</td>
+          <td>{{enrolledCourse.enrolledCourseName}}</td>
+          <td>{{enrolledCourse.enrolledCourseStartDate}}</td>
+          <td>{{enrolledCourse.enrolledCourseDuration}}</td>
+          <td>{{enrolledCourse.enrolledCourseFees}}</td>
+          <td>{{enrolledCourse.mentorName}}</td>
+          <td>{{enrolledCourse.mentorEmail}}</td>
+          <td>{{enrolledCourse.courseStatus}}</td>
+          <td>
+            <a *ngIf="enrolledCourse.courseStatus=='Approved'"  routerLink="/payment/{{enrolledCourse.enrolledCourseId}}">
+              <button type="button" class="btn btn-outline-primary btn-sm">Complete Payment</button></a>&nbsp;
+            <a *ngIf="enrolledCourse.courseStatus=='PaymentComplete'"  routerLink="/courseContent/{{enrolledCourse.enrolledCourseId}}">
+              <button type="button" (click)=OnStartCourse(enrolledCourse.enrolledCourseId) class="btn btn-outline-success btn-sm">Start Course</button></a>&nbsp;
+              <a *ngIf="enrolledCourse.courseStatus=='CourseStarted'"  routerLink="/courseContent/{{enrolledCourse.enrolledCourseId}}">
+                <button type="button"  class="btn btn-outline-primary btn-sm">Go to Course</button></a>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/studentDash">Return to student Dashboard</a>
+  </div>
+  
+  <!-- <button type="button" class="btn btn-outline-danger btn-sm" (click)="OnDelete(course.id)">Delete</button> -->
+  
+  <footer class="page-footer font-small blue">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="#">devWithRahul</a>
+      </div>
+      <!-- Copyright -->
+    
+    </footer>
+  
+  
+  
+  
+  
+  
+  
+  

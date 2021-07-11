@@ -1,0 +1,121 @@
+<app-root></app-root>
+<br>
+<div class="container">
+  <div class="col-md-9">
+    <div class="card ">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Add Profile</h4>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <form #AddProfileForm='ngForm' (ngSubmit)="OnSubmit()">
+
+
+
+              <div class="form-group row">
+                <label for="name" class="col-4 col-form-label">First Name*</label>
+                <div class="col-8">
+                  <input id="FName" name="FName" placeholder="Enter name" class="form-control here" type="text"
+                    [(ngModel)]="studentProfileData.FName" readonly>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="name" class="col-4 col-form-label">Last Name*</label>
+                <div class="col-8">
+                  <input id="LName" name="LName" placeholder="Enter name" class="form-control here" type="text"
+                    [(ngModel)]="studentProfileData.LName" readonly>
+                </div>
+              </div>
+
+
+
+              <div class="form-group row">
+                <label for="email" class="col-4 col-form-label">Email*</label>
+                <div class="col-8">
+                  <input id="Email" name="Email" placeholder="Enter email" class="form-control here" required="required"
+                    type="text" [(ngModel)]="studentProfileData.Email" readonly>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="phone" class="col-4 col-form-label">Phone*</label>
+                <div class="col-8">
+                  <input id="Phone" name="Phone" placeholder="Enter phone number" class="form-control here"
+                     type="number" [(ngModel)]="addStudentProfileData.Phone" required
+                    #Phone="ngModel" [class.is-invalid]="Phone.invalid && Phone.touched" required>
+
+                  <div *ngIf="Phone.errors && (Phone.valid || Phone.touched)">
+                    <small class="text-danger" *ngIf="Phone.errors.required">Phone number is required</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="address" class="col-4 col-form-label">Address*</label>
+                <div class="col-8">
+                  <input id="Address" name="Address" placeholder="Enter address" class="form-control here" type="text"
+                    [(ngModel)]="addStudentProfileData.Address" required>
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label for="univMarks" class="col-4 col-form-label">University Marks*</label>
+                <div class="col-8">
+                  <input id="UnivMarks" name="UnivMarks" placeholder="CGPA or Percentage " class="form-control here"
+                    type="number" [(ngModel)]="addStudentProfileData.UnivMarks" required>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="hsMarks" class="col-4 col-form-label">Standard 12 Marks*</label>
+                <div class="col-8">
+                  <input id="HsMarks" name="HsMarks" placeholder="CGPA or Percentage " class="form-control here"
+                    type="number" [(ngModel)]="addStudentProfileData.HsMarks" required>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="boardMarks" class="col-4 col-form-label">Standard 10 Marks*</label>
+                <div class="col-8">
+                  <input id="BoardMarks" name="BoardMarks" placeholder="CGPA or Percentage " class="form-control here"
+                    type="number" [(ngModel)]="addStudentProfileData.BoardMarks" required>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="skills" class="col-4 col-form-label">Skills*</label>
+                <div class="col-8">
+                  <input id="Skills" name="Skills" placeholder="e.g Java, Python" class="form-control here" type="text"
+                    [(ngModel)]="addStudentProfileData.Skills" required>
+                </div>
+              </div>
+
+
+
+              <div class="form-group row">
+                <div class="offset-4 col-8">
+                  <button name="submit" type="submit" class="btn btn-primary">Add to my profile</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="#">devWithRahul</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>

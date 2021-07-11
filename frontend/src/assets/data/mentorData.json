@@ -1,0 +1,8 @@
+[
+    {"id":1,"name":"jag","experience":"8 yrs","course":"Python","fees":2000},
+    {"id":2,"name":"Amar","experience":"28 yrs","course":"Python2","fees":20200},
+    {"id":3,"name":"Pronoy","experience":"83 yrs","course":"FSD","fees":5200},
+    {"id":4,"name":"Subhankhi","experience":"83 yrs","course":"MEAN","fees":24000},
+    {"id":5,"name":"Pritam","experience":"82 yrs","course":"AJ","fees":20600},
+    {"id":6,"name":"Rahul","experience":"11182 yrs","course":"asp","fees":2500}
+  ]

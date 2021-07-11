@@ -1,0 +1,180 @@
+<app-root></app-root>
+<br>
+<br>
+<div class="container emp-profile">
+    <!-- top row -->
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="../../assets/img/profilePhoto.png" alt=""/>
+            </div>
+        </div>
+       
+
+
+        <div class="col-md-6">
+            <div class="profile-head">
+                        <h5>
+                            {{studentFirstName}} {{studentLastName}}
+                        </h5>
+                        <h6>
+                           Student
+                        </h6>
+                        
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Details</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="profile" aria-selected="false">Notifications</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="col-md-2" *ngIf="!addedProfileDataOnce">
+            <a routerLink="/studentProfileAdd" class="btn btn-primary">Add Profile</a>
+        </div>
+        <div class="col-md-2" *ngIf="addedProfileDataOnce">
+                <a routerLink="/editStudentDetails" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+    <br>
+
+
+    <!-- bottom row -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-work">
+                <p>Course Links</p>
+                <a routerLink="/runningCoursesForStudents">Running Courses</a><br/>
+                <a  routerLink="/StudentOngoingCourses">My Ongoing Courses</a><br/>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label>User Id</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentId}}</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentFirstName}} {{studentLastName}}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentEmail}}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Phone</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentDetails.phone}}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Profession</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Address</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{studentDetails.address}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>University Marks</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{studentDetails.univMarks}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>12th Standard Marks </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{studentDetails.hsMarks}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>10th Standard Marks</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{studentDetails.boardMarks}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Skills</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{studentDetails.skills}}</p>
+                                        </div>
+                                    </div>
+                           
+                </div>
+                <!-- <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Experience</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Expert</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+   
+<footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="#">devWithRahul</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer> 
+    

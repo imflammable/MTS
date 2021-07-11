@@ -1,0 +1,84 @@
+<div id="logreg-forms">
+    <form class="form-signin" *ngIf='!submitted' #signupForm='ngForm' [mustMatch]="['pass','cPass']" novalidate 
+        (ngSubmit)="onSubmit(signupForm.form.valid)" >
+
+        <h4 class="h5 mb-3 font-weight-normal" style="text-align: center">Sign up</h4>
+
+        <input type="text" class="form-control"  placeholder="FirstName"
+        name="FirstName" autofocus [(ngModel)]="signupClassModel.FirstName"
+        #Fname="ngModel" [class.is-invalid]="Fname.invalid && Fname.touched" required >
+          
+          <div *ngIf="Fname.errors && (Fname.valid || Fname.touched)">
+            <small class="text-danger" *ngIf="Fname.errors.required">First name is required</small>
+          </div>
+
+
+          <input type="text" class="form-control"  placeholder="LastName" required 
+          name="LastName"  [(ngModel)]="signupClassModel.LastName"
+          #Lname="ngModel" [class.is-invalid]="Lname.invalid && Lname.touched" required >
+          
+          <div *ngIf="Lname.errors && (Lname.valid || Lname.touched)">
+            <small class="text-danger" *ngIf="Lname.errors.required">Last name is required</small>
+          </div>
+        
+        <input type="email"  class="form-control"  pattern="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" 
+        #email="ngModel" [class.is-invalid]="email.invalid && email.touched" placeholder="Email address" 
+          name="Email" required  [(ngModel)]="signupClassModel.Email">
+        <div *ngIf="email.errors && (email.valid || email.touched)">
+          <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+          <small class="text-danger" *ngIf="email.errors.pattern">Enter valid email</small>
+        </div>
+
+        <select (blur)="validateRole(role.value)" (change)="validateRole(role.value)" class="form-control" name="Role" 
+           #role='ngModel' [class.is-invalid]="roleHasError && role.touched" [(ngModel)]="signupClassModel.Role" >
+            <option  value="0" disabled>--Select--</option>
+            <!-- <option value="1">Admin</option> -->
+            <option value="2">Mentor</option>
+            <option value="3">Student</option>
+
+          </select>
+          <small class="text-danger" [class.d-none]="!roleHasError || role.untouched">Please select a role</small>
+
+          
+          
+
+
+        <input type="password" class="form-control" #pass='ngModel' placeholder="Password" required 
+          name="Password" [class.is-invalid]='pass.invalid && pass.touched'  [(ngModel)]="signupClassModel.Password" minlength="6">
+          <div *ngIf="pass.errors && (pass.valid || pass.touched)">
+            <small class="text-danger" *ngIf="pass.errors.required">Password is required</small>
+            <small class="text-danger" *ngIf="pass.errors.minlength">password must be  atleast 3 characters</small>
+          </div>
+
+         
+        
+        <input type="password" class="form-control" #cPass='ngModel' placeholder=" Confirm Password" required 
+          name="cPass" [class.is-invalid]='cPass.invalid && cPass.touched' ngModel>
+          <div *ngIf="cPass.errors && (cPass.valid || cPass.touched)">
+            <small class="text-danger" *ngIf="cPass.errors.required"> Confirm password is required</small>
+            <small class="text-danger" *ngIf="cPass.errors.mustMatch">Confirm password did not match</small>
+          </div>
+        
+        <button  class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign up</button>
+        <div class="text-center text-danger" *ngIf='errorMessage' >
+          {{errorMessage}}
+        </div>
+      </form>
+</div>
+    
+<div class="text-center" *ngIf="submitted">
+  <h4 class="text-success">Signup successful  </h4>
+  <br>
+  <a routerLink="/login">Move to login page</a>
+</div>
+   
+
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="#">devWithRahul</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>

@@ -1,0 +1,191 @@
+<app-root></app-root>
+<app-root></app-root>
+<br>
+<br>
+<div class="container emp-profile">
+    <!-- top row -->
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="../../assets/img/profilePhoto.png" alt="" />
+            </div>
+        </div>
+
+
+
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>
+                    {{studentFirstName}} {{studentLastName}}
+                </h5>
+                <h6>
+                    Mentor
+                </h6>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">Details</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="profile" aria-selected="false">Notifications</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-md-2" *ngIf="!addedProfileDataOnce">
+            <a routerLink="/mentorProfileAdd" class="btn btn-primary">Add Profile</a>
+        </div>
+        <div class="col-md-2" *ngIf="addedProfileDataOnce">
+            <a routerLink="/editMentorDetails" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+    <br>
+
+
+    <!-- bottom row -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-work">
+                <p>Course Links</p>
+                <a routerLink="/requestedCourses">Notifications</a><br>
+                <a routerLink="/allAvailableCourses">All available Courses</a><br>
+                <a routerLink="/runningCourses">All running Courses</a><br>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label>User Id</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentId}}</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentFirstName}} {{studentLastName}}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{studentEmail}}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Phone</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{mentorDetails.phone}}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Profession</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Mentor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Address</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{mentorDetails.address}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Experience</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{mentorDetails.experience}} Years</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Work Profile</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{mentorDetails.workProfile}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Highest Degree</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{mentorDetails.highestDegree}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Skills</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{mentorDetails.skills}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Experience</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Expert</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="#">devWithRahul</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+<!-- <br>
+<br>
+<h4>hi Mentor</h4>
+<a class="btn btn-primary" routerLink="/requestedCourses">Get requested courses</a >
+<a class="btn btn-primary" routerLink="/allAvailableCourses">all available Courses</a >
+<a class="btn btn-primary" routerLink="/runningCourses">all running Courses</a >
+<a class="btn btn-primary" routerLink="/mentorProfile">mentor Profile </a > -->

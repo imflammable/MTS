@@ -1,0 +1,6 @@
+[
+    {"id":1,"name":"angular","duration":8,"fees":"$2000"},
+    {"id":2,"name":"fsd","duration":4,"fees":"$300"},
+    {"id":3,"name":"aj","duration":5,"fees":"$200"},
+    {"id":4,"name":"mean","duration":6,"fees":"$4000"}
+]

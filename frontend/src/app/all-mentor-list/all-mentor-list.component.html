@@ -1,0 +1,46 @@
+
+<app-root></app-root>
+<div class="container" style="padding-top: 20px">
+    <h2>Registered Mentors</h2>
+    <table class="table  table-hover"  >
+      <thead style="text-align: center">
+        <tr>
+          <th hidden>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Access Permission</th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center" >
+        <tr *ngFor="let mentor of mentors">
+          <td hidden>{{mentor.id}}</td>
+          <td>{{mentor.firstName}} {{mentor.lastName}}</td>
+          <td>{{mentor.email}}</td>
+          <td>
+            <button *ngIf="mentor.accessPermission" class="btn btn-danger btn-sm" (click)="Block(mentor.id)">Block</button>
+            <button *ngIf="!mentor.accessPermission" class="btn btn-primary btn-sm" (click)="Unblock(mentor.id)">Unblock</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/adminDash">Return to Dashboard</a>
+  </div>
+  <footer class="page-footer font-small blue">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="#">devWithRahul</a>
+      </div>
+      <!-- Copyright -->
+    
+    </footer>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

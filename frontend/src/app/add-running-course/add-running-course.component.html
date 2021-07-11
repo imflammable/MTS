@@ -1,0 +1,47 @@
+<div class="container"  style="padding-top: 50px;padding-left:250px">
+    <div class="col-md-9">
+		<div class="card">
+		    <div class="card-body">
+		        <div class="row">
+		            <div class="col-md-12">
+		                <h4>Confirm Course</h4>
+		                <hr>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="col-md-12">
+                        <form class="form-signin" #addCourseForm='ngForm' (ngSubmit)="OnConfirmation()" >
+                            
+                            <div class="form-group"> 
+                            <input type="number"  name="Fees"  placeholder="Enter fees" class="form-control" required="required" [(ngModel)]="runningCourseData.Fees" >
+                            </div>
+
+                            <div class="form-group ">
+                            <input type="text"  name="CourseDetailsId" readonly placeholder="Enter CourseDetail Id" class="form-control" required="required" [(ngModel)]="runningCourseData.CourseDetailsId" >
+                            </div>
+
+                            <div class="form-group ">
+                            <input type="text"  name="MentorDetailsId" readonly placeholder="Enter Mentor Email" class="form-control" required="required" [(ngModel)]="runningCourseData.MentorDetailsId" >
+                            </div>
+    
+
+                            
+                            <div class="form-group offset-0 col-3 ">
+                                <button class="btn btn-success btn-block" type="submit">Confirm</button>
+                            </div>
+                        </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+    </div>
+</div>
+<footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="#">devWithRahul</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>

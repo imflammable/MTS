@@ -1,0 +1,59 @@
+
+<div class="container" style="padding-top: 20px">
+    <h2>Available Courses</h2>
+    <table class="table  table-hover"  >
+      <thead>
+        <tr>
+          <th hidden>Id</th>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>Duration</th>
+          <th>Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let course of courses">
+          <td hidden>{{course.id}}</td>
+          <td>{{course.name}}</td>
+          <td>{{course.startDate}}</td>
+          <td>{{course.duration}}</td>
+          <td><a routerLink = "/addRunningCourse/{{course.id}}"><button type="button" class="btn btn-outline-primary btn-sm">Add to my profile</button></a>&nbsp;
+             <!-- <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#exampleModal">Delete</button>
+                          
+             <!-- Modal  -->
+           <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  
+                  <div class="modal-body">
+                    Are you sure to delete this course permanently?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">No</button>&nbsp;
+                    <button (click) ="OnDelete(course.id)" type="button" data-dismiss="modal" class="btn btn-danger btn-sm">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/mentorDash">Return to Dashboard</a>
+  </div>
+
+  <!-- <button type="button" class="btn btn-outline-danger btn-sm" (click)="OnDelete(course.id)">Delete</button> -->
+
+
+
+
+  <footer class="page-footer font-small blue">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="#">devWithRahul</a>
+      </div>
+      <!-- Copyright -->
+    
+    </footer>

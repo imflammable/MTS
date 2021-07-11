@@ -1,0 +1,117 @@
+
+<app-root></app-root>
+<br>
+<div class="container">
+    <div class="col-md-9">
+        <div class="card ">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Edit Profile</h4>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form  #AddProfileForm='ngForm'  (ngSubmit)="OnSubmit()">
+
+                          
+
+                          <div class="form-group row">
+                            <label for="name" class="col-4 col-form-label">First Name*</label> 
+                            <div class="col-8">
+                              <input id="FName" name="FName" placeholder="Enter name" 
+                              class="form-control here" type="text" [(ngModel)]="studentData.studentFirstName" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                                <label for="name" class="col-4 col-form-label">Last Name*</label> 
+                                <div class="col-8">
+                                  <input id="LName" name="LName" placeholder="Enter name" 
+                                  class="form-control here" type="text"  [(ngModel)]="studentData.studentLastName" readonly>
+                                </div>
+                              </div>
+                          
+                          
+                          
+                          <div class="form-group row">
+                            <label for="email" class="col-4 col-form-label">Email*</label> 
+                            <div class="col-8">
+                              <input id="Email" name="Email" placeholder="Enter email" 
+                              class="form-control here" required="required" type="text"  [(ngModel)]="studentData.studentEmail"  readonly>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                            <label for="phone" class="col-4 col-form-label">Phone*</label> 
+                            <div class="col-8">
+                              <input id="Phone" name="Phone" placeholder="Enter phone number" 
+                              class="form-control here" required="required" type="number" [(ngModel)]="addStudentProfileData.phone" required>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="address" class="col-4 col-form-label">Address*</label> 
+                            <div class="col-8">
+                              <input id="Address" name="Address" placeholder="Enter address" 
+                              class="form-control here" type="text" [(ngModel)]="addStudentProfileData.address" required>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row">
+                                <label for="Experience" class="col-4 col-form-label">Experience*</label> 
+                                <div class="col-8">
+                                  <input id="Experience" name="Experience" placeholder="In years" 
+                                  class="form-control here" type="number" [(ngModel)]="addStudentProfileData.experience" required>
+                                </div>
+                              </div>
+
+                          <div class="form-group row">
+                                <label for="WorkProfile" class="col-4 col-form-label">WorkProfile*</label> 
+                                <div class="col-8">
+                                  <input id="WorkProfile" name="WorkProfile" placeholder="Previous Experiences"
+                                   class="form-control here" type="text" [(ngModel)]="addStudentProfileData.workProfile" required>
+                                </div>
+                              </div>
+
+                          <div class="form-group row">
+                            <label for="HighestDegree" class="col-4 col-form-label">HighestDegree*</label> 
+                            <div class="col-8">
+                              <input id="HighestDegree" name="HighestDegree" placeholder="e.g BTech, MTech, PHd"
+                               class="form-control here" type="text" [(ngModel)]="addStudentProfileData.highestDegree" required>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                            <label for="skills" class="col-4 col-form-label">Skills*</label> 
+                            <div class="col-8">
+                              <input id="Skills" name="Skills" placeholder="e.g Java, Python" 
+                              class="form-control here" type="text" [(ngModel)]="addStudentProfileData.skills" required>
+                            </div>
+                          </div>
+
+                         
+                          
+                          <div class="form-group row">
+                            <div class="offset-4 col-8">
+                              <button name="submit" type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="#">devWithRahul</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>

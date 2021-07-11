@@ -1,0 +1,74 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="home">MOD</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/aboutUs">About us</a>
+      </li>
+      <li class="nav-item" *ngIf="!_signupService.isTokenPresent()">
+      <form class="form-inline mt-2 mt-md-0" >
+        <input class="form-control sm-2" type="text" placeholder="Enter course name" aria-label="Search" name="InputValue" [(ngModel)]="InputValue">&nbsp;
+        <a routerLink="/searchGeneralCourses/{{InputValue}}"><button  class="btn btn-outline-success my-2 my-sm-0" >Search</button></a>
+      </form>
+      </li>
+    </ul>
+    
+    <!-- right side -->
+    <ul class="navbar-nav ml-auto" >
+        
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!_signupService.isTokenPresent()" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" *ngIf="!_signupService.isTokenPresent()" routerLink="/signup">Signup</a>
+        </li>
+     
+      <li class="dropdown" dropdown >
+        <a dropdownToggle class="nav-link dropdown-toggle" *ngIf="_signupService.isTokenPresent() && _signupService.isAdmin()"
+            id="navbardrop" data-toggle="dropdown" role="button">{{Name}}</a>
+          <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" routerLink="/adminDash">Go to Profile</a >
+            <a class="dropdown-item" routerLink="/courses">Get all Courses</a >
+            <a class="dropdown-item" routerLink="/availableMentors">edit Mentors</a >
+            <a class="dropdown-item" routerLink="/users">edit Students</a >
+            <a class="dropdown-item" routerLink="/addNewCourse">Add a new Course</a >
+            <a class="dropdown-item" (click)="_signupService.removeToken()">Logout</a>
+          </div>
+      </li>
+      
+
+      <li class="dropdown" dropdown >
+        <a dropdownToggle class="nav-link dropdown-toggle" *ngIf="_signupService.isTokenPresent() && _signupService.isMentor()" 
+            id="navbardrop" data-toggle="dropdown" role="button">{{Name}}</a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" routerLink="/mentorDash">My profile</a>
+            <a class="dropdown-item" routerLink="/requestedCourses">requested Courses</a>
+            <a class="dropdown-item" routerLink="/allAvailableCourses">all Available Courses</a>
+            <a class="dropdown-item" routerLink="/runningCourses">running Courses</a>
+            <a class="dropdown-item" (click)="_signupService.removeToken()">Logout</a>
+          </div>
+      </li>
+
+      <li class="dropdown" dropdown >
+        <a dropdownToggle class="nav-link dropdown-toggle" *ngIf="_signupService.isTokenPresent() && _signupService.isStudent()" 
+            id="navbardrop" data-toggle="dropdown" role="button">{{Name}}</a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" routerLink="/studentDash">My profile</a>
+            <a class="dropdown-item" routerLink="/runningCourses">Running Courses</a>
+            <a class="dropdown-item" routerLink="/enrolledCourses">My Courses</a>
+            <a class="dropdown-item" (click)="_signupService.removeToken()">Logout</a>
+          </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+
+<router-outlet ></router-outlet>
+
